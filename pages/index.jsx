@@ -1,89 +1,49 @@
 import Head from "next/head";
-import { Container, Row, Card, Button } from "react-bootstrap";
+import CustomHeader from "./components/customheader.jsx";
+import { Container, Row, Col, Button, Image} from "react-bootstrap";
+import Content from "./components/content.jsx"
+import Projects from "./components/projects.jsx"
+import Profile from "./components/profile.jsx";
+import {ArrowCircleDown} from "@phosphor-icons/react"
+import React, {useRef} from "react";
+import CustomFooter from "./components/customfooter.jsx";
+
 
 export default function Home() {
-  return (
-    <Container className="md-container">
-      <Head>
-        <title>ReactJS with react-bootstrap</title>
-        <link rel="icon" href="/favicon-32x32.png" />
-      </Head>
-      <Container>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-        <p>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-        <Container>
-          <Row className="justify-content-md-between">
-            <Card className="sml-card">
-              <Card.Body>
-                <Card.Title>Documentation</Card.Title>
-                <Card.Text>
-                  Find in-depth information about Next.js features and API.
-                </Card.Text>
-                <Button variant="primary" href="https://nextjs.org/docs">
-                  More &rarr;
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card className="sml-card">
-              <Card.Body>
-                <Card.Title>Learn</Card.Title>
-                <Card.Text>
-                  Learn about Next.js in an interactive course with quizzes!
-                </Card.Text>
-                <Button variant="primary" href="https://nextjs.org/learn">
-                  More &rarr;
-                </Button>
-              </Card.Body>
-            </Card>
-          </Row>
-          <Row className="justify-content-md-between">
-            <Card className="sml-card">
-              <Card.Body>
-                <Card.Title>Examples</Card.Title>
-                <Card.Text>
-                  Discover and deploy boilerplate example Next.js projects.
-                </Card.Text>
-                <Button
-                  variant="primary"
-                  href="https://github.com/vercel/next.js/tree/canary/examples"
-                >
-                  More &rarr;
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card className="sml-card">
-              <Card.Body>
-                <Card.Title>Deploy</Card.Title>
-                <Card.Text>
-                  Instantly deploy your Next.js site to a public URL with
-                  Vercel.
-                </Card.Text>
-                <Button
-                  variant="primary"
-                  href="https://vercel.com/new?utm_source=github&utm_medium=example&utm_campaign=next-example"
-                >
-                  More &rarr;
-                </Button>
-              </Card.Body>
-            </Card>
-          </Row>
-        </Container>
-      </Container>
+  const projects = useRef(null);
 
-      <footer className="cntr-footer">
-        <a
-          href="https://vercel.com?filter=next.js&utm_source=github&utm_medium=example&utm_campaign=next-example"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className="sml-logo" />
-        </a>
-      </footer>
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <Container>
+      <header>
+        <CustomHeader/>
+      </header>
+
+        <Container>
+            <Row>
+              <Col>
+                <Profile src={"/profile.jpg"} author={"@aube_blue"} platform={"X"} link={"https://x.com/aube_blue?lang=en"}/>
+              </Col>
+              <Col>
+                <Content Title={"Hello, I’m Greeshma!"} Description={"I am a computer science student and a math-lover. I love turning random ideas into useful solutions."}/>
+              </Col>
+            </Row>
+            
+            <Container className="d-flex justify-content-center">
+              <Button size="xl" variant="Link" onClick={() => scrollToSection(projects)}><ArrowCircleDown size={70}/></Button>
+            </Container>
+            
+            <hr/>
+            <Container className="project-cards" ref={projects}>
+              <Projects imageUrl={"https://preview.redd.it/i-got-bored-so-i-decided-to-draw-a-random-image-on-the-v0-4ig97vv85vjb1.png?width=640&crop=smart&auto=webp&s=22ed6cc79cba3013b84967f32726d087e539b699"} Title={"Hello"} Description={"This is the project's description haha"}/>
+            </Container>
+            
+        </Container>
+
+      <CustomFooter/>
     </Container>
   );
 }
