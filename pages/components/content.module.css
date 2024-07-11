@@ -1,0 +1,16 @@
+.my-row{
+    border: 2px solid red;
+}
+
+.hello{
+    height: 30vh;
+    align-content: end;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.description{
+    height: 45vh;
+    padding-top: 10px;
+    white-space: pre-line; 
+}
