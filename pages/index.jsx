@@ -1,10 +1,13 @@
 import Head from "next/head";
 import CustomHeader from "./components/customheader.jsx";
-import { Container, Row, Col, Button, Image} from "react-bootstrap";
-import Content from "./components/content.jsx"
-import Projects from "./components/projects.jsx"
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import Content from "./components/content.jsx";
+import Projects from "./components/projects.jsx";
 import Profile from "./components/profile.jsx";
-import {ArrowCircleDown} from "@phosphor-icons/react"
+import {ArrowCircleDown} from '@phosphor-icons/react/ArrowCircleDown'
 import React, {useRef} from "react";
 import CustomFooter from "./components/customfooter.jsx";
 

@@ -2,8 +2,11 @@ import React, {useRef} from "react";
 import CustomHeader from './components/customheader.jsx';
 import Content from './components/content.jsx';
 import Profile from './components/profile.jsx';
-import { ArrowCircleDown } from '@phosphor-icons/react';
-import {Container, Row, Col, Button} from "react-bootstrap";
+import {ArrowCircleDown} from '@phosphor-icons/react/ArrowCircleDown'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 import CustomFooter from "./components/customfooter.jsx";
 
 

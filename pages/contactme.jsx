@@ -1,5 +1,7 @@
 import React from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Content from './components/content.jsx';
 import CustomHeader from './components/customheader';
 import CustomFooter from './components/customfooter.jsx';
