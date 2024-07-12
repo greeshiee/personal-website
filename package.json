@@ -8,6 +8,7 @@
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
     "bootstrap": "^4.4.1",
+    "framer-motion": "^11.3.2",
     "next": "latest",
     "react": "^18.2.0",
     "react-bootstrap": "^1.0.1",
